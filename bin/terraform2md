@@ -2,8 +2,9 @@
 var program = require('commander');
 
 var dir = process.cwd();
+var default_template = 'default.js';
 
-program.version('0.1.0');
+program.version('0.1.1');
 
 program
        .command('help')
@@ -13,24 +14,24 @@ program
        });
 
 program
-       .arguments('generate')
+       .command('generate')
        .description('Generate markdown file')
        .option('-o, --output <output>', 'The output file')
        .option('-t, --template <template>', 'The template to use')
-       .action(function () {
+       .action(function (options) {
                var tf2md;
-               if (program.template) {
+               if (options.template) {
                    // Absolute Path
-                   if (program.template[0] == '/') {
-                       tf2md = require(program.template);
-                   // Relative Path
+                   if (options.template[0] == '/') {
+                       tf2md = require(options.template);
                    } else {
-                       tf2md = require(dir + '/' + program.template);
+                       // Relative Path
+                       tf2md = require(dir + '/' + options.template);
                    }
                } else {
-                   tf2md = require('../templates/terraform2md.js');
+                   tf2md = require('../templates/' + default_template);
                }
-               tf2md.run(program.output);
+               tf2md.run(options.output);
        });
 
 program.parse(process.argv);
