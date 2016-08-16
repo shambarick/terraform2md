@@ -2,6 +2,8 @@ var tf2md = require('../index.js');
 
 /**
  * Default template to generate markdown file
+ * 
+ * TODO: Refactoring
  */
 module.exports = {
 
@@ -40,6 +42,7 @@ module.exports = {
                                 Object.keys(value).forEach(function (k) {
                                     
                                     if (typeof(value[k]) == 'string') {
+                                        // I forgot why I did that
                                     } else if (Array.isArray(value[k])) {
                                         var sub = [];
                                         value[k].forEach(function (a) {
