@@ -2,6 +2,7 @@
 var program = require('commander');
 
 var dir = process.cwd();
+var default_template = 'default.js';
 
 program.version('0.1.0');
 
@@ -28,7 +29,7 @@ program
                        tf2md = require(dir + '/' + program.template);
                    }
                } else {
-                   tf2md = require('../templates/terraform2md.js');
+                   tf2md = require('../templates/' + default_template);
                }
                tf2md.run(program.output);
        });
