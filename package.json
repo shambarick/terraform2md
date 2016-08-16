@@ -1,0 +1,35 @@
+{
+  "name": "terraform2md",
+  "version": "0.1.0",
+  "description": "Generate the Markdown from a terraform.tfstate file.",
+  "author": "Bryan LOT <bryan.lot@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shambarick/terraform2md.git"
+  },
+   "bugs": {
+    "url": "https://github.com/shambarick/terraform2md/issues"
+  },
+  "files": [
+    "index.js",
+    "terraform2md.js",
+    "lib",
+    "bin"
+  ],
+  "main": "index.js",
+  "bin": "./bin/terraform2md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "terraform",
+    "tfstate",
+    "generator",
+    "markdown"
+  ],
+ "dependencies": {
+    "commander": "^2.9.0",
+    "json2md": "^1.5.2"
+  },
+  "license": "MIT"
+}

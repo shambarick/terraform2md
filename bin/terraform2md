@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+var program = require('commander');
+
+var dir = process.cwd();
+
+program.version('0.1.0');
+
+program
+       .command('help')
+       .description('Get help on terraform2md')
+       .action(function () {
+               program.outputHelp();
+       });
+
+program
+       .arguments('generate')
+       .description('Generate markdown file')
+       .option('-o, --output <output>', 'The output file')
+       .option('-t, --template <template>', 'The template to use')
+       .action(function () {
+               var tf2md;
+               if (program.template) {
+                   // Absolute Path
+                   if (program.template[0] == '/') {
+                       tf2md = require(program.template);
+                   // Relative Path
+                   } else {
+                       tf2md = require(dir + '/' + program.template);
+                   }
+               } else {
+                   tf2md = require('../templates/terraform2md.js');
+               }
+               tf2md.run(program.output);
+       });
+
+program.parse(process.argv);
