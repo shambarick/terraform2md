@@ -14,7 +14,8 @@
     "index.js",
     "terraform2md.js",
     "lib",
-    "bin"
+    "bin",
+    "templates"
   ],
   "main": "index.js",
   "bin": "./bin/terraform2md",
