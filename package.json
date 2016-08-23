@@ -1,6 +1,6 @@
 {
   "name": "terraform2md",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Generate the Markdown from a terraform.tfstate file.",
   "author": "Bryan LOT <bryan.lot@gmail.com>",
   "repository": {
