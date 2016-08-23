@@ -31,7 +31,8 @@
   ],
   "dependencies": {
     "commander": "^2.9.0",
-    "json2md": "^1.5.2"
+    "json2md": "^1.5.2",
+    "lodash": "^4.15.0"
   },
   "license": "MIT"
 }
