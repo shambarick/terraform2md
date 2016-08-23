@@ -37,7 +37,7 @@ terraform2md generate -o terraform.md
 Example
 
 ```
-var tf2md = require('tf2md');
+var tf2md = require('terraform2md');
 
 data = tf2md.loadFromFile('./terraform.tfstate');
 
@@ -62,3 +62,7 @@ tf2md.generate('terraform.md'); // Generate a terraform.md
 ### JSON2MD
 
 See: [https://github.com/IonicaBizau/json2md#memo-documentation](https://github.com/IonicaBizau/json2md#memo-documentation)
+
+## License
+
+MIT
